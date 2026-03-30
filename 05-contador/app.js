@@ -15,12 +15,12 @@ function criarListaNumeros(quantidade){
     }
     return listaNumeros
 }
-console.log(criarListaNumeros(13))
+// console.log(criarListaNumeros(13))
 
 function criarListaPares(quantidade){
     let listaPar = []
     let quantidadeDois = Number(quantidade)*2
-    cont = 1
+    let cont = 1
     while(cont <= quantidadeDois){
         
         if(cont % 2 == 0){
@@ -33,12 +33,12 @@ function criarListaPares(quantidade){
     
     return listaPar
 }
-console.log(criarListaPares(13))
+// console.log(criarListaPares(13))
 
 function criarListaImpares(quantidade){
     let listaImpar = []
     let quantidadeDois = Number(quantidade)*2
-    cont = 0
+    let cont = 0
     while(cont <= quantidadeDois){
         
         if(cont % 2 != 0){
@@ -51,7 +51,7 @@ function criarListaImpares(quantidade){
     
     return listaImpar
 }
-console.log(criarListaImpares(13))
+// console.log(criarListaImpares(13))
 
 function criarListaMultDe5(quantidade){
     let listaMultDe5 = []
@@ -68,7 +68,7 @@ function criarListaMultDe5(quantidade){
     
     return listaMultDe5
 }
-console.log(criarListaMultDe5(13))
+// console.log(criarListaMultDe5(13))
 
 function criarListaPotenc2(quantidade){
     let listaPotenc2 = []
@@ -85,4 +85,35 @@ function criarListaPotenc2(quantidade){
 
     return listaPotenc2
 }
-console.log(criarListaPotenc2(13))
+// console.log(criarListaPotenc2(13))
+
+function gerar(){
+
+const tabela = document.getElementById("tbdy")
+const quantidade = document.getElementById("quantidade").value 
+
+const listaNumero = criarListaNumeros(Number(quantidade))
+const listaPar = criarListaPares(Number(quantidade))
+const listaImpar = criarListaImpares(Number(quantidade))
+const listaMultDe5 = criarListaMultDe5(Number(quantidade))
+const listaPotenc2 = criarListaPotenc2(Number(quantidade))
+
+for(let i = 0; i < quantidade; i++){
+    const linha = document.createElement("tr")
+
+    function criarCelula(valor){
+        const td = document.createElement("td")
+        td.textContent = valor
+        return td
+    }
+
+    linha.appendChild(criarCelula(listaNumero[i]))
+    linha.appendChild(criarCelula(listaPar[i]))
+    linha.appendChild(criarCelula(listaImpar[i]))
+    linha.appendChild(criarCelula(listaMultDe5[i]))
+    linha.appendChild(criarCelula(listaPotenc2[i]))
+
+    tabela.appendChild(linha)
+}
+
+}
