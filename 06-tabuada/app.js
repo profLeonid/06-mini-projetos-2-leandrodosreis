@@ -52,3 +52,34 @@ function criarListaDivisao(quantidade){
     return 
 }
 console.log(criarListaDivisao(9))
+
+function gerar(){
+
+    const tabela = document.getElementById("tbdy")
+    const quantidade = document.getElementById("quantidade").value 
+    
+    const listaNumero = criarListaNumeros(Number(quantidade))
+    const listaAdicao = criarListaAdicao(Number(quantidade))
+    const listaSubtracao = criarListaSubtracao(Number(quantidade))
+    const listaMultiplicacao = criarListaMultiplicacao(Number(quantidade))
+    const listaDivisao= criarListaDivisao(Number(quantidade))
+    
+    for(let i = 0; i < quantidade; i++){
+        const linha = document.createElement("tr")
+    
+        function criarCelula(valor){
+            const td = document.createElement("td")
+            td.textContent = valor
+            return td
+        }
+    
+        linha.appendChild(criarCelula(listaNumero[i]))
+        linha.appendChild(criarCelula(listaAdicao[i]))
+        linha.appendChild(criarCelula(listaSubtracao[i]))
+        linha.appendChild(criarCelula(listaMultiplicacao[i]))
+        linha.appendChild(criarCelula(listaDivisao[i]))
+    
+        tabela.appendChild(linha)
+    }
+    
+    }
