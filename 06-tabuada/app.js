@@ -47,7 +47,7 @@ function criarListaDivisao(quantidade){
     let list = []
 
     for(let i = 1; i <= 10; i++){
-        list.push(Number(quantidade) / Number(i))
+        list.push((Number(quantidade) / i).toFixed(2))
     }
 
     return list
