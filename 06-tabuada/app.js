@@ -49,7 +49,8 @@ function criarListaDivisao(quantidade){
     for(let i = 1; i <= 10; i++){
         list.push(Number(quantidade) / Number(i))
     }
-    return 
+
+    return list
 }
 console.log(criarListaDivisao(9))
 
@@ -82,4 +83,4 @@ function gerar(){
         tabela.appendChild(linha)
     }
     
-    }
+}
